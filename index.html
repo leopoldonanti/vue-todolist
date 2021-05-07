@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css">
+  <link rel="stylesheet" href="style.css">
+  <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+</head>
+<body>
+  
+  <div id="app" class="container">
+
+    <div class="logo"> 
+      <!-- <img src="titolo.png" alt=""> -->   
+
+    </div>
+
+    <div class="user-interaction">
+      
+        <h4 v-if="alertActive">Qualcosa non funziona. Prova ad inserire un testo più lungo ;) </h4>
+        
+        <div class="frame-input">
+          <input v-model="impegno"
+                 @keyup.enter="aggiungiImpegno"
+                 type="text">
+        <button @click="aggiungiImpegno">Aggiungi</button>
+        </div>
+        
+      
+    </div>
+
+    <div class="foglio">
+      <i class="fas fa-dragon"></i>
+
+      <div class="todo">
+        <ul>
+          <li v-for= "todo in listaCose"   
+              :class= "todo.checked ? 'done' : null"
+              :style=""
+              @click="todo.checked = !todo.checked">
+              <!-- nello style (index === listaCose.length -1) ?'border:none' : null  -->
+            <h4>
+              <i class="fas fa-circle"></i>
+              {{todo.todo}}
+            </h4> 
+            <span>
+              <i @click.stop="rimuoviImpegno" class="fas fa-times"
+                 ></i>
+            </span> 
+
+          </li>
+          
+        </ul>
+      </div>
+      
+      
+      
+    </div>
+
+    <div class="todo_frame">
+
+    </div>
+
+
+
+  </div>
+
+
+  <script src="js/script.js"></script>
+</body>
+</html>
