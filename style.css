@@ -8,6 +8,7 @@ body{
   background-color: rgba(49, 0, 128, 0.4);
   padding: 20px;
   height: 100vh;
+  position: relative;
 }
  .container{
    display: flex;
@@ -27,14 +28,13 @@ body{
  .logo img{
   width: 700px;
  }
-
  .frame-input{
   display: flex;
   align-items: center;
  }
  .user-interaction h4{
    margin-bottom: 10px;
-   color: red;
+   color: rgb(155, 11, 11);
  }
  input{
   width: 500px;
@@ -77,22 +77,13 @@ button:active{
 .foglio{
    width: 700px;
    background-color: rgba(220, 193, 255, 0.363);
-   /* margin: auto; */
    display: flex;
    flex-direction: column;
    border-radius: 8px;
-   padding-top: 30px;
+   padding: 20px 0 20px 0px;
    text-align: center;
    border: solid 1px purple;
   }
-.foglio>i::before{
-  font-size: 520px;
-  color: rgba(111, 0, 185, 0.08);
-  z-index: 1;
-  position: absolute;
-  right: 330px;
-  
-}
 .new-todo h4{
   line-height: 30px;
   margin: auto;
@@ -100,10 +91,9 @@ button:active{
   padding: 5px;
   border: solid 1px darkred;
   margin-bottom: 20px;
-  color: darkred;
+  color: rgb(221, 1, 255);
   border-radius: 15px; 
 }
-
 ul{
   list-style: none;
   padding: 0px 10px 0px 10px;
@@ -124,7 +114,10 @@ li{
   cursor: pointer;
   z-index: 2;
   color: purple;
-  transition: all 0.4s;
+  transition: all ease-in-out 0.2s;
+}
+.todo li:last-child{
+  border: none;
 }
 .todo li:hover{
   border: none;

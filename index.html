@@ -10,7 +10,7 @@
   <script src="https://cdn.jsdelivr.net/npm/vue"></script>
 </head>
 <body>
-  
+
   <div id="app" class="container">
 
     <div class="logo"> 
@@ -18,23 +18,19 @@
 
     </div>
 
-    <div class="user-interaction">
-      
-        <h4 v-if="alertActive">Qualcosa non funziona. Prova ad inserire un testo più lungo ;) </h4>
-        
-        <div class="frame-input">
-          <input v-model="impegno"
-                 @keyup.enter="aggiungiImpegno"
-                 type="text">
+    <div class = "user-interaction">
+      <h4 v-if = "alertActive">Qualcosa non funziona. Prova ad inserire un testo più lungo ;)</h4>   
+
+      <div class = "frame-input">
+        <input v-model="impegno"
+                @keyup.enter="aggiungiImpegno"
+                type="text">
+
         <button @click="aggiungiImpegno">Aggiungi</button>
-        </div>
-        
-      
+      </div>   
     </div>
 
     <div class="foglio">
-      <i class="fas fa-dragon"></i>
-
       <div class="todo">
         <ul>
           <li v-for= "todo in listaCose"   
@@ -47,28 +43,13 @@
               {{todo.todo}}
             </h4> 
             <span>
-              <i @click.stop="rimuoviImpegno" class="fas fa-times"
-                 ></i>
+              <i @click.stop="rimuoviImpegno" class="fas fa-times"></i>
             </span> 
-
-          </li>
-          
+          </li>          
         </ul>
       </div>
-      
-      
-      
     </div>
-
-    <div class="todo_frame">
-
-    </div>
-
-
-
   </div>
-
-
   <script src="js/script.js"></script>
 </body>
 </html>
